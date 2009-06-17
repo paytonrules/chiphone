@@ -1,0 +1,2 @@
+module BullshitsHelper
+end
