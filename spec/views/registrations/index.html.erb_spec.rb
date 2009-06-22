@@ -6,13 +6,6 @@ describe "/registrations/index" do
     assigns[:event] = mevent
   end
   
-  it "should display all the registations" do
-    render 'registrations/index'
-    
-    response.body.should include("Joey")
-    response.body.should include("Dough Bradbury")
-  end
-  
   it "should display an error if the registration failed" do
     mock_error = mock("Error", :count => 1, :full_messages => ["hello"])
     assigns[:registration] = mock_model(Registration, :name => nil, :errors => mock_error)

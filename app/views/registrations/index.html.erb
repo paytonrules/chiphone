@@ -1,16 +1,18 @@
-<h1>chiPhone</h1>
-<p>Welcome to the Chicago iPhone Developer's group.  Our next meeting is:</p>
-<p><%= @event.description %></p>
-<p><%= @event.event_date.strftime("%D") %></p>
+<center><%= image_tag "logo.png" %></center>	
+<br/>
 
-<% form_for :registration, :url => {:action => "create"} do |form| -%>
-	<%= form.error_messages %>
-	<label for="registration_name">Name:</label> 
-    <%= form.text_field :name, :size => 40 %> 
-	<input type="hidden" name="registration[event_id]" value="<%= @event.id %>">
-	<%= submit_tag %>
-<% end -%>
+<div id="background">
+		<div id="phone_screen">
+			
+			<p><%= @event.event_date.strftime("%D") %></p>
+			<p><%= @event.description %></p>
+			<% form_for :registration, :url => {:action => "create"} do |form| -%>
+				<%= form.error_messages %>
+				<label for="registration_name">Name:</label> 
+			    <%= form.text_field :name, :size => 40 %> 
+				<input type="hidden" name="registration[event_id]" value="<%= @event.id %>">
+				<%= submit_tag %>
+			<% end -%>
 
-<% @event.registrations.each do |registration| %>
-	<%= registration.name %><br/>
-<% end %>
+		</div>
+</div>
