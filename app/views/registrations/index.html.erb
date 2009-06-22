@@ -4,14 +4,32 @@
 <div id="background">
 		<div id="phone_screen">
 			
-			<p><%= @event.event_date.strftime("%D") %></p>
-			<p><%= @event.description %></p>
-			<% form_for :registration, :url => {:action => "create"} do |form| -%>
+			<div>
+				Location: 8th Light Offices
+			</div>
+			
+			<div>
+				<%= @event.event_date.strftime("%D") %>
+			</div>
+			
+			<div>
+				Thanks For Coming
+				<%= @event.description %>
+			</div>
+			
+			<% form_for :registration, :url => {:action => "create"}, :html => {:name => "registration_form"} do |form| -%>
 				<%= form.error_messages %>
-				<label for="registration_name">Name:</label> 
-			    <%= form.text_field :name, :size => 40 %> 
+				<table>
+					<tr valign="top">
+						<td>
+							<%= form.text_field :name, :size => 15, :style => "font-size:17pt;" %> 
+						</td>
+						<td>
+							<%= image_submit_tag 'register.png', :name => "submit_button", :onmousedown => "this.src = '/images/registerclicked.png'" %>
+						</td>
+					</tr>
+				</table>
 				<input type="hidden" name="registration[event_id]" value="<%= @event.id %>">
-				<%= submit_tag %>
 			<% end -%>
 
 		</div>
