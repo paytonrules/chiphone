@@ -5,15 +5,14 @@
 		<div id="phone_screen">
 			
 			<div>
-				Location: 8th Light Offices
+				<%= image_tag "location.png" %>
+			</div>
+			
+			<div id="date">
+				<%= @event.event_date.to_s(:long) %>
 			</div>
 			
 			<div>
-				<%= @event.event_date.strftime("%D") %>
-			</div>
-			
-			<div>
-				Thanks For Coming
 				<%= @event.description %>
 			</div>
 			
@@ -22,7 +21,7 @@
 				<table>
 					<tr valign="top">
 						<td>
-							<%= form.text_field :name, :size => 15, :style => "font-size:17pt;" %> 
+							<%= form.text_field :name, :size => 13, :style => "font-size:17pt;" %> 
 						</td>
 						<td>
 							<%= image_submit_tag 'register.png', :name => "submit_button", :onmousedown => "this.src = '/images/registerclicked.png'" %>

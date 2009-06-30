@@ -2,7 +2,8 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
 describe "/registrations/index" do
   before(:each) do
-    mevent = mock_model(Event, :registrations => [mock_model(Registration, :name => "Joey"), mock_model(Registration, :name => "Dough Bradbury")], :null_object => true)
+    mevent = mock_model(Event, :registrations => [mock_model(Registration, :name => "Joey"), mock_model(Registration, :name => "Dough Bradbury")], 
+                               :event_date => Time.now, :null_object => true)
     assigns[:event] = mevent
   end
   
