@@ -9,7 +9,7 @@
 }
 
 #phone_screen {
-	padding-left: 70px; 
+	padding-left: 74px; 
 	padding-right: 71px; 
 	padding-top: 180px;
 }
@@ -22,5 +22,13 @@
 	font-family: Helvetica;
 	font-height: 16pt;
 	background-repeat: no-repeat;
-	height: 50px;
+	height: 40px;
+}
+
+#description {
+	background-image:url(../images/backing.png);
+	color: #406397;
+	height: 240px;	
+	padding: 5px 15px 5px 10px;
+	background-repeat: no-repeat;
 }
