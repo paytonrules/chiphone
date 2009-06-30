@@ -16,6 +16,7 @@ test:
   timeout: 5000
 
 production:
+  hostname: mysql.chiphonegroup.org
   adapter: mysql
   database: chiphone_production
   pool: 5
