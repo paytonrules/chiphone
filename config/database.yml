@@ -19,5 +19,5 @@ production:
   host: mysql.chiphonegroup.org
   adapter: mysql
   database: chiphone_production
-  pool: 5
-  timeout: 5000
+  username: paytonrules
+  password: Rush1sHere
