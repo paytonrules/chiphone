@@ -9,9 +9,7 @@
 }
 
 #phone_screen {
-	padding-left: 74px; 
-	padding-right: 71px; 
-	padding-top: 180px;
+	padding:180px 71px 0px 74px;
 }
 
 #date {
@@ -31,4 +29,9 @@
 	height: 240px;	
 	padding: 5px 15px 5px 10px;
 	background-repeat: no-repeat;
+}
+
+#location {
+	text-decoration:none;
+	border: none;
 }

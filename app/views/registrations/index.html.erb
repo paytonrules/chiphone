@@ -2,27 +2,14 @@
 <br/>
 
 <div id="background">
-		<div id="phone_screen">
-			
-			<div>
-				<%= image_tag "location.png" %>
-			</div>
-			
-			<div id="date">
-				<%= @event.event_date.to_s(:long) if @event %>
-			</div>
-			
-			<div id="description">
-				<% if @event %>
-					<%= @event.description %>
-				<% else %>
-					Coming Soon!
-				<% end %>
-			</div>
-			
-			<% if @event %>
-				<%= render :partial => 'registration_form' %>
-			<% end %>
-
+	<div id="phone_screen">
+		<div id="registration_screen">
+			<%= render :partial => 'registration_screen' %>
 		</div>
+		
+		<div id="location_screen" style="display:none">
+			<%= render :partial => 'location_screen' %>
+		</div>
+		
+	</div>
 </div>

@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <script type="text/javascript" src="javascripts/JsSimpleUnit.js"></script>
+		<script type="text/javascript" src="../javascripts/jquery.js"></script>
+		<script type="text/javascript" src="../javascript/jquery-ui.js"></script>
+		<script type="text/javascript" src="../javascripts/slide.js"></script>
+    <link href="stylesheets/JsSimpleUnit.css" rel="stylesheet" type="text/css">
+    <title>Sample Usage</title>
+  </head>
+  <body>
+		<div id="test_div" style="display: block;">
+			Data To Slide Left
+		</div>
+		<div id="replacement_div" style="display: none;">
+			Data Replaced
+		</div>
+  
+  </body>
+  
+  <script type="text/javascript">
+    test(
+      {
+				shouldHideThisElementOnSlide: function() {
+					$("#test_div").slidingReplacement('#replacement_div', 'left');
+					
+					test.assertEquals($("#test_div").css("display"), "none")
+				},
+				
+				shouldShowTheReplacementElementOnSlide: function() {
+					$("#test_div").slidingReplacement('#replacement_div', 'left');
+					
+					test.assertEquals($("#replacement_div").css("display"), "block")
+				}				
+     	}
+    );
+  </script>
+  
+</html>

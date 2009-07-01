@@ -1,0 +1,19 @@
+<div id="location">
+	<a href="#"><%= image_tag("location.png", :border => 0) %></a>
+</div>
+
+<div id="date">
+	<%= @event.event_date.to_s(:long) if @event %>
+</div>
+
+<div id="description">
+	<% if @event %>
+		<%= @event.description %>
+	<% else %>
+		Coming Soon!
+	<% end %>
+</div>
+
+<% if @event %>
+	<%= render :partial => 'registration_form' %>
+<% end %>
