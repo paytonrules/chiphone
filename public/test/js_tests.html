@@ -2,7 +2,8 @@
   <head>
     <script type="text/javascript" src="javascripts/JsSimpleUnit.js"></script>
 		<script type="text/javascript" src="../javascripts/jquery.js"></script>
-		<script type="text/javascript" src="../javascript/jquery-ui.js"></script>
+		<script type="text/javascript" src="../javascripts/jquery-ui.js"></script>
+		<script type="text/javascript" src="../javascripts/jrails.js"></script>
 		<script type="text/javascript" src="../javascripts/slide.js"></script>
     <link href="stylesheets/JsSimpleUnit.css" rel="stylesheet" type="text/css">
     <title>Sample Usage</title>
@@ -18,19 +19,51 @@
   </body>
   
   <script type="text/javascript">
+		
     test(
       {
-				shouldHideThisElementOnSlide: function() {
+				shouldBlindLeftThisElement: function() {
+					var called = false;
+					jQuery.prototype.blindLeft = function() {
+						if ( $(this).attr('id') === 'test_div') {
+							called = true;
+						}
+					};
+					
 					$("#test_div").slidingReplacement('#replacement_div', 'left');
 					
-					test.assertEquals($("#test_div").css("display"), "none")
+					test.assertEquals(called, true)
 				},
 				
-				shouldShowTheReplacementElementOnSlide: function() {
+				shouldSlideToTheLeft: function() {
+					var called = false;
+					
+					jQuery.prototype.show = function(effect, options, speed, callback) {
+						if ($(this).attr('id') == 'test_div' ) {
+							if (effect === "slide" && options.direction === "left" ) {
+								called = true;
+							}
+						}
+					};
+					
+					$("#test_div").slideLeft();
+					
+					test.assertEquals(called, true);
+				},
+				
+				shouldSLideLeftThePassedInElement: function() {
+					var called = false;
+					
+					jQuery.prototype.slideLeft = function() {
+						if ($(this).attr('id') == 'replacement_div' ) {
+							called = true;
+						}
+					};
+					
 					$("#test_div").slidingReplacement('#replacement_div', 'left');
 					
-					test.assertEquals($("#replacement_div").css("display"), "block")
-				}				
+					test.assertEquals(called, true);
+				}
      	}
     );
   </script>
