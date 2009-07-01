@@ -9,27 +9,20 @@
 			</div>
 			
 			<div id="date">
-				<%= @event.event_date.to_s(:long) %>
+				<%= @event.event_date.to_s(:long) if @event %>
 			</div>
 			
 			<div id="description">
-				<%= @event.description %>
+				<% if @event %>
+					<%= @event.description %>
+				<% else %>
+					Coming Soon!
+				<% end %>
 			</div>
 			
-			<% form_for :registration, :url => {:action => "create"}, :html => {:name => "registration_form"} do |form| -%>
-				<%= form.error_messages %>
-				<table>
-					<tr valign="top">
-						<td>
-							<%= form.text_field :name, :size => 13, :style => "font-size:17pt;" %> 
-						</td>
-						<td>
-							<%= image_submit_tag 'register.png', :name => "submit_button", :onmousedown => "this.src = '/images/registerclicked.png'" %>
-						</td>
-					</tr>
-				</table>
-				<input type="hidden" name="registration[event_id]" value="<%= @event.id %>">
-			<% end -%>
+			<% if @event %>
+				<%= render :partial => 'registration_form' %>
+			<% end %>
 
 		</div>
 </div>

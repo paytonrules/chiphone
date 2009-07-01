@@ -16,8 +16,8 @@ test:
   timeout: 5000
 
 production:
-  host: mysql.chiphonegroup.org
   adapter: mysql
+  host: mysql.chiphonegroup.org
   database: chiphone_production
   username: paytonrules
   password: Rush1sHere

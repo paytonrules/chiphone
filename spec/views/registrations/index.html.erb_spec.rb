@@ -26,4 +26,13 @@ describe "/registrations/index" do
     
     response.should have_tag("input[type=image][name=submit_button]")
   end
+  
+  it "should render properly if event is nil" do
+    assigns[:event] = nil
+    
+    render 'registrations/index'
+    
+    response.should have_tag("div#date", "")
+    response.should have_tag("div#description", "Coming Soon!")
+  end
 end
