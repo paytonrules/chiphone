@@ -1,14 +1,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html lang=en xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>chiPhone</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<%= stylesheet_link_tag :all, :cache => false, :media => "all" %>	
 		<%= javascript_include_tag "jquery", "jquery-ui", "jrails", "slide" %>
-		
-		<script type="text/javascript">
+		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAjIYoLrBfOh-jCyhGOt1UTRRH-uqCs86sUDnfSmuTcPt3r2LDFxSnN-trgYnMi2XuKb3MuObeLa0o6A&amp;sensor=false"
+            type="text/javascript"></script>
+    <script type="text/javascript">
+
+    	function initialize() {
+      	if (GBrowserIsCompatible()) {
+					// point = new GLatLng(42.30026991719819, -88.00201714038849);
+					//         	var map = new GMap2(document.getElementById("map_canvas"));
+					// map.setCenter(point, 2);
+					//  					map.addOverlay(new GMarker(point));
+					//         	map.setUIToDefault();
+					
+					var map = new GMap2(document.getElementById("map_canvas"));
+	        map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+	        map.setUIToDefault();
+      	}
+    	}
+
 			$(document).ready(function() {
+				initialize();
 					
 				$("#location").click(function(event) {
 					$("#registration_screen").slidingReplacement('#location_screen', 'left');
@@ -18,7 +35,7 @@
 		</script>
 	</head>
 		
-	<body>
+	<body onunload="GUnload()">
 		<%= @content_for_layout %>
 		
 		<div id="footer">

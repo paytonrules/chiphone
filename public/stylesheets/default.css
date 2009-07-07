@@ -8,6 +8,13 @@
 	margin-right: auto;
 }
 
+#logo {
+	display:block; 
+	margin-left: auto; 
+	margin-right: auto;
+	width: 296px;
+}
+
 #phone_screen {
 	padding:180px 71px 0px 74px;
 }
@@ -31,7 +38,7 @@
 	background-repeat: no-repeat;
 }
 
-#location {
-	text-decoration:none;
-	border: none;
+#map_canvas {
+	height: 300px;
+	width: 317px;
 }
