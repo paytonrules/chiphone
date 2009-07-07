@@ -1,13 +1,13 @@
 <% remote_form_for :registration, :url => {:action => "create"} do |form| -%>
 	<%= form.error_messages %>
-	<div style="padding: 0px; font-family:helvetica; color: #4C566C; font-weight: bold;">Name or Email:</div>
+	<div class="iphone_helvetica">Name or Email:</div>
 	<table>
 		<tr valign="top">
 			<td>
 				<%= form.text_field :name, :size => 13, :style => "font-size:17pt;" %> 
 			</td>
 			<td>
-				<%= image_submit_tag 'register.png', :name => "submit_button", :onmousedown => "this.src = '/images/registerclicked.png'" %>
+				<%= image_submit_tag 'register.png', :name => "submit_button", :onmousedown => "this.src = '/images/registerclicked.png'", :onmouseup => "this.src = '/images/register.png'" %>
 			</td>
 		</tr>
 	</table>

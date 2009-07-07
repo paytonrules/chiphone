@@ -42,3 +42,16 @@
 	height: 300px;
 	width: 317px;
 }
+
+.iphone_helvetica {
+	padding: 0px; 
+	font-family: helvetica; 
+	color: #4C566C; 
+	font-weight: bold;
+}
+
+.directions_info {
+	font-family: helvetica; 
+	color: #4C566C; 
+	font-size: 8pt;
+}
