@@ -55,3 +55,15 @@
 	color: #4C566C; 
 	font-size: 8pt;
 }
+
+#location_back {
+	width: 72px; 
+	margin-left:auto; 
+	margin-right: auto; 
+	padding-top: 20px;
+}
+
+.image_link {
+	text-decoration:none;
+	border: none;
+}
