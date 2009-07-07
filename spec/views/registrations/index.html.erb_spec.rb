@@ -15,10 +15,10 @@ describe "/registrations/index" do
     response.should have_tag("div[class=errorExplanation]")
   end
   
-  it "should have a form named registration_form" do
+  it "should have a form" do
     render 'registrations/index'
     
-    response.should have_tag("form[name=registration_form]")
+    response.should have_tag("form")
   end
   
   it "should have submit tag named submit_button" do
