@@ -1,5 +1,6 @@
-<% form_for :registration, :url => {:action => "create"} do |form| -%>
+<% remote_form_for :registration, :url => {:action => "create"} do |form| -%>
 	<%= form.error_messages %>
+	<div style="padding: 0px; font-family:helvetica; color: #4C566C; font-weight: bold;">Name or Email:</div>
 	<table>
 		<tr valign="top">
 			<td>

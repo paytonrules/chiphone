@@ -12,15 +12,15 @@
 
     	function initialize() {
       	if (GBrowserIsCompatible()) {
-					// point = new GLatLng(42.30026991719819, -88.00201714038849);
-					//         	var map = new GMap2(document.getElementById("map_canvas"));
-					// map.setCenter(point, 2);
-					//  					map.addOverlay(new GMarker(point));
-					//         	map.setUIToDefault();
-					
+					point = new GLatLng(42.30026991719819, -88.00201714038849);
 					var map = new GMap2(document.getElementById("map_canvas"));
-	        map.setCenter(new GLatLng(37.4419, -122.1419), 13);
-	        map.setUIToDefault();
+					map.setCenter(point, 14);
+					map.addOverlay(new GMarker(point));
+					map.setUIToDefault();
+					
+					// var map = new GMap2(document.getElementById("map_canvas"));
+					// 	        map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+					// 	        map.setUIToDefault();
       	}
     	}
 
