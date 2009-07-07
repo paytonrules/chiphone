@@ -18,7 +18,7 @@ describe "/registrations/index" do
   it "should have a form" do
     render 'registrations/index'
     
-    response.should have_tag("form")
+    response.should have_tag("form#registration_form")
   end
   
   it "should have submit tag named submit_button" do

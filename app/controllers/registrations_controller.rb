@@ -9,7 +9,11 @@ class RegistrationsController < ApplicationController
     @registration = Registration.create(params["registration"])
     
     @event = Event.find(:last)
-    render :action => "index"
+    
+    respond_to do |format|
+      format.js {render :layout => false}
+    end
+
   end
 
 end

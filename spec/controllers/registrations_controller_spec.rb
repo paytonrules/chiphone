@@ -24,10 +24,11 @@ describe RegistrationsController do
       post 'create', "registration"=>{"name"=>"Joey Manso"}
     end
     
-    it "should render the index page" do
+    it "should render the create page without a layout" do
       post 'create', "registration"=>{"name"=>"Joey Manso"}
-      
-      response.should render_template("registrations/index")
+              
+      response.should render_template("registrations/create.js.erb")
+      response.layout.should be_nil
     end
     
     it "should assign registration object" do

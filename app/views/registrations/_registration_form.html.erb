@@ -1,4 +1,4 @@
-<% remote_form_for :registration, :url => {:action => "create"} do |form| -%>
+<% form_for :registration, :url => {:action => "create"}, :html => {:id => "registration_form"} do |form| -%>
 	<%= form.error_messages %>
 	<div class="iphone_helvetica">Name or Email:</div>
 	<table>
