@@ -12,7 +12,7 @@
 
     	function initialize() {
       	if (GBrowserIsCompatible()) {
-					var center = new GLatLng(42.304, -88.000);
+					var center = new GLatLng(42.352, -87.972);
 					var eighthLight = new GLatLng(42.30026991719819, -88.00201714038849);
 					var map = new GMap2(document.getElementById("map_canvas"), {size: new GSize(309, 317)});
 					var marker = new GMarker(eighthLight, {title: "8th Light Office"});
@@ -21,9 +21,9 @@
 					customUI.controls.menumaptypecontrol = false;
 					customUI.controls.smallzoomcontrol3d = false;
 					map.setUI(customUI);
-					map.setCenter(center, 15);
+					map.setCenter(center, 11);
 					map.addOverlay(marker);
-					marker.openInfoWindowHtml('<div style="width: 230px;">Meetings are held at the 8th Light offices, located just off of Route 45 in Libertyville.  If you need pickup and drop off from the Libertyville Train station <a href="mailto:eric@8thlight.com?subject=pickup">email me</a> and one of the 8th Lighters should be able to give you a ride.</div>', {suppressMapPan:true});
+					marker.openInfoWindowHtml('<div style="width: 230px;font-size: 10pt;font-family: helvetica;">Meetings are held at the 8th Light offices, located just off of Route 45 in Libertyville.  If you need pickup and drop off from the Libertyville Train station <a href="mailto:eric@8thlight.com?subject=pickup">email me</a> and one of the 8th Lighters should be able to give you a ride.</div>', {suppressMapPan:true});
       	}
     	}
 
@@ -42,10 +42,6 @@
 		<%= @content_for_layout %>
 		
 		<div id="footer">
-		</div>
-		
-		<div id='HTML'>
-			TESTY WEST
 		</div>
 	</body>
 </html>
