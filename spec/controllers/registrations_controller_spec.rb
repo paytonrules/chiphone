@@ -15,11 +15,11 @@ describe RegistrationsController do
   
   describe "POST 'create'" do
     before(:each) do
-      Registration.stub!(:create)
+      Registration.stub!(:create!)
     end
     
     it "should save the registration" do
-      Registration.should_receive(:create).with({"name"=>"Joey Manso"})
+      Registration.should_receive(:create!).with({"name"=>"Joey Manso"})
       
       post 'create', "registration"=>{"name"=>"Joey Manso"}
     end
@@ -33,7 +33,7 @@ describe RegistrationsController do
     
     it "should assign registration object" do
       registry = mock_model(Registration)
-      Registration.stub!(:create).and_return(registry)
+      Registration.stub!(:create!).and_return(registry)
       
       post 'create', "registration"=>{"name"=>"Joey Manso"}
       
