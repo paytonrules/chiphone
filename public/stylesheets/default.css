@@ -1,3 +1,9 @@
+.jqmOverlay { background-color: #000; }
+
+body {
+	font-family: Helvetica;
+}
+
 #background {
 	background-image:url(../images/background.png);
 	height: 900px;
@@ -63,7 +69,22 @@
 	padding-top: 20px;
 }
 
-.image_link {
+.image_link, .transparent_link {
 	text-decoration:none;
 	border: none;
+}
+
+.transparent_link {
+	top: 100px; 
+	position: relative; 
+	left: 5px; 
+}
+
+#success_dialog {
+	position: absolute;
+	background-image:url(../images/success.png);
+	width: 277px;
+	height: 152px;
+	margin-left: 15px;
+	margin-top: 20px;
 }

@@ -2,6 +2,10 @@
 
 <div id="background">
 	<div id="phone_screen">
+		<div id="success_dialog" style="display: none;">
+			<a href="#" onclick="$('#success_dialog').jqmHide();"><%= image_tag("okbuttontransparent.png", :class => "transparent_link")%> </a>
+		</div>
+		
 		<div id="registration_screen">
 			<%= render :partial => 'registration_screen' %>
 		</div>

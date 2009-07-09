@@ -47,4 +47,6 @@ $(document).ready(function() {
 		return false;
 	});
 	
+	$('#success_dialog').jqm({modal:true});
+	
 });
