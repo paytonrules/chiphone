@@ -6,7 +6,7 @@ class RegistrationsController < ApplicationController
   end
   
   def create
-    @registration = Registration.create(params["registration"])
+    @registration = Registration.create!(params["registration"])
     
     @event = Event.find(:last)
     
