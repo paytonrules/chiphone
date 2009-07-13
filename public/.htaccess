@@ -1,6 +1,3 @@
 RewriteEngine on
-
-# enable analog stats pages
-RewriteCond %{REQUEST_URI} ^/stats/(.*)$ [OR]
-RewriteCond %{REQUEST_URI} ^/failed_auth.html$
-RewriteRule ^.*$ - [L]
+RewriteCond %{REQUEST_URI} ^/stats.* 
+RewriteRule .* - [L]
