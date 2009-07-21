@@ -50,16 +50,7 @@ $(document).ready(function() {
 	$("#google_group_link").click( function(event)  {
 		window.open('http://groups.google.com/group/chiphone', 'chiPhone google group');
 	});
-	
-	$("#registrations_link").click( function(event) {
-		if ($('#location_screen').is(":visible")) {
-			$('#location_screen').slidingReplacement('#registrations', 'left');
-		}
-		else {
-			$("#registration_screen").slidingReplacement('#registrations', 'left');
-		}
-	})
-	
+		
 	$('#success_dialog').jqm({modal:true});
 	
 });
