@@ -3,6 +3,7 @@ class RegistrationsController < ApplicationController
   
   def index
     @event = Event.find(:last)
+    @event = Event.new unless @event
   end
   
   def create

@@ -8,7 +8,7 @@ function initializeGoogleMap() {
 	if (GBrowserIsCompatible()) {
 		var center = new GLatLng(42.369, -87.957);
 		var eighthLight = new GLatLng(42.30026991719819, -88.00201714038849);
-		var map = new GMap2(document.getElementById("map_canvas"), {size: new GSize(309, 360)});
+		var map = new GMap2(document.getElementById("map_canvas"), {size: new GSize(309, 330)});
 		var marker = new GMarker(eighthLight, {title: "8th Light Office"});
 		var infoWindow = '<div class="directions_info" style="width: 230px;">Meetings are' + 
 									   ' held at the 8th Light offices, located just off of Route 45 in Libertyville. If' +
@@ -46,6 +46,19 @@ $(document).ready(function() {
 		$.post($(this).attr("action"), $(this).serialize(), null, "script");
 		return false;
 	});
+	
+	$("#google_group_link").click( function(event)  {
+		window.open('http://groups.google.com/group/chiphone', 'chiPhone google group');
+	});
+	
+	$("#registrations_link").click( function(event) {
+		if ($('#location_screen').is(":visible")) {
+			$('#location_screen').slidingReplacement('#registrations', 'left');
+		}
+		else {
+			$("#registration_screen").slidingReplacement('#registrations', 'left');
+		}
+	})
 	
 	$('#success_dialog').jqm({modal:true});
 	

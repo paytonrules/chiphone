@@ -11,6 +11,17 @@ describe RegistrationsController do
       
       assigns[:event].should == mevent
     end
+    
+    it "should create an event of the last event is nil" do
+      mevent = mock_model(Event)
+      
+      Event.stub!(:find).and_return(nil)
+      Event.should_receive(:new).and_return(mevent)
+      
+      get 'index'
+      
+      assigns[:event].should == mevent
+    end
   end
   
   describe "POST 'create'" do
@@ -48,5 +59,6 @@ describe RegistrationsController do
       
       assigns[:event].should == mevent
     end
+
   end
 end

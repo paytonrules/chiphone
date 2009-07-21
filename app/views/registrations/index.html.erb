@@ -8,16 +8,19 @@
 			</div>
 		
 			<div id="registration_screen">
-				<%= render :partial => 'registration_screen' %>
+				<%= render :partial => 'event' %>
 			</div>
 		
 			<div id="location_screen" style="display:none">
 				<%= render :partial => 'location_screen' %>
 			</div>
+			
+			<div id="registrations" style="display:none">
+				<%= render :partial => 'registration', :collection => @event.registrations %>
+			</div>
 		</div>
 		
-		<%= image_tag "registrations_link.png", :style => "padding-left:6px; padding-top:7px" %>
-		<%= image_tag "google_group.png", :style => "padding-left:6px; padding-top:7px" %>
+		<a href="#" id="google_group_link"><%= image_tag "google_group.png", :id => "registrations_link", :style => "padding-left:6px; padding-top:7px; border:none;" %></a>
 		
 	</div>
 </div>
