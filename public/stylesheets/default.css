@@ -22,7 +22,12 @@ body {
 }
 
 #phone_screen {
-	padding:180px 71px 0px 74px;
+	padding:170px 68px 0px 65px;
+}
+
+#phone_area {
+	height: 397px;
+	padding: 0 0 0 9px;
 }
 
 #date {
@@ -39,7 +44,7 @@ body {
 #description {
 	background-image:url(../images/backing.png);
 	color: #406397;
-	height: 240px;	
+	height: 200px;	
 	padding: 10px 15px 5px 10px;
 	background-repeat: no-repeat;
 }
@@ -87,4 +92,8 @@ body {
 	height: 152px;
 	margin-left: 15px;
 	margin-top: 20px;
+}
+
+#registration_form {
+	padding: 7px 0 0 0;
 }

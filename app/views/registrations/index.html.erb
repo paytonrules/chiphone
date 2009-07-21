@@ -2,17 +2,22 @@
 
 <div id="background">
 	<div id="phone_screen">
-		<div id="success_dialog" style="display: none;">
-			<a href="#" onclick="$('#success_dialog').shrink();$('#success_dialog').jqmHide();"><%= image_tag("okbuttontransparent.png", :class => "transparent_link")%> </a>
+		<div id="phone_area">
+			<div id="success_dialog" style="display: none;">
+				<a href="#" onclick="$('#success_dialog').shrink();$('#success_dialog').jqmHide();"><%= image_tag("okbuttontransparent.png", :class => "transparent_link")%> </a>
+			</div>
+		
+			<div id="registration_screen">
+				<%= render :partial => 'registration_screen' %>
+			</div>
+		
+			<div id="location_screen" style="display:none">
+				<%= render :partial => 'location_screen' %>
+			</div>
 		</div>
 		
-		<div id="registration_screen">
-			<%= render :partial => 'registration_screen' %>
-		</div>
-		
-		<div id="location_screen" style="display:none">
-			<%= render :partial => 'location_screen' %>
-		</div>
+		<%= image_tag "registrations_link.png", :style => "padding-left:6px; padding-top:7px" %>
+		<%= image_tag "google_group.png", :style => "padding-left:6px; padding-top:7px" %>
 		
 	</div>
 </div>
