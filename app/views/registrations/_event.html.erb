@@ -3,7 +3,7 @@
 </div>
 
 <div id="date">
-	<%= @event.formatted_date @event %>
+	<%= @event.formatted_date if @event %>
 </div>
 
 <div id="description">
