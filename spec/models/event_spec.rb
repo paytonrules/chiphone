@@ -19,4 +19,10 @@ describe Event do
     @event = Event.new
     @event.registrations.should == []
   end
+  
+  it "should return a formatted version of the date" do
+    @event = Event.new
+    @event.event_date = DateTime.parse("01/01/2001 19:00")
+    @event.formatted_date.should match(/Jan 01.+PM/)
+  end
 end
