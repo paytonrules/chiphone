@@ -3,7 +3,7 @@
 </div>
 
 <div id="date">
-	<%= @event.event_date.event.event_date.strftime("%b %d %I:%M:%S %p") if @event %>
+	<%= @event.event_date.strftime("%b %d %I:%M:%S %p") if @event %>
 </div>
 
 <div id="description">
