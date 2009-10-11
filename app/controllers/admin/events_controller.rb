@@ -5,5 +5,6 @@ class Admin::EventsController < Admin::ApplicationController
     config.columns = [:event_date, 
                       :description,
                       :registrations]
+    
   end
 end
