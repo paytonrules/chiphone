@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090709044443) do
+ActiveRecord::Schema.define(:version => 20091011150920) do
 
   create_table "events", :force => true do |t|
     t.text     "description", :limit => 255
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(:version => 20090709044443) do
   create_table "registrations", :force => true do |t|
     t.string   "name"
     t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
