@@ -29,6 +29,7 @@ ActionController::Routing::Routes.draw do |map|
   #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
   #     admin.resources :products
   #   end
+  map.resources :user_sessions
   
   map.admin 'admin', :controller => 'admin/admin'
 
