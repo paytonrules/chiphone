@@ -6,29 +6,44 @@ jQuery.ajaxSetup({
 
 function initializeGoogleMap() {
 	if (GBrowserIsCompatible()) {
-		var center = new GLatLng(42.369, -87.957);
-		var eighthLight = new GLatLng(42.30026991719819, -88.00201714038849);
-		var map = new GMap2(document.getElementById("map_canvas"), {size: new GSize(309, 330)});
-		var marker = new GMarker(eighthLight, {title: "8th Light Office"});
-		var infoWindow = '<div class="directions_info" style="width: 230px;">Meetings are' + 
-									   ' held at the 8th Light offices, located just off of Route 45 in Libertyville. If' +
-									   ' you need pickup and drop off from the Libertyville Train station' +
-									   ' <a href="mailto:eric@8thlight.com?subject=pickup">email me</a> and one of the' + 
-									   ' 8th Lighters should be able to give you a ride.' + 
-									   '<p style="font-weight:bold;">Coming From:</p>' + 
-									   '<form action="http://maps.google.com/maps" method="get" target="_blank">' +
-					           '<input type="text" SIZE=20 MAXLENGTH=48 name="saddr" id="saddr" value="" /><br>' +
-					           '<INPUT value="Get Directions" TYPE="SUBMIT">' +
-					           '<input type="hidden" name="daddr" value="' + eighthLight.lat() + ',' + eighthLight.lng() + '" />';
-		
-		var customUI = map.getDefaultUI();
-		customUI.controls.menumaptypecontrol = false;
-		customUI.controls.smallzoomcontrol3d = false;
-		map.setUI(customUI);
-		map.setCenter(center, 11);
-		map.addOverlay(marker);
-		marker.openInfoWindowHtml(infoWindow, {suppressMapPan:true});
-	}
+//		var center = new GLatLng(42.369, -87.957);
+//		var eighthLight = new GLatLng(42.30026991719819, -88.00201714038849);
+//		var map = new GMap2(document.getElementById("map_canvas"), {size: new GSize(309, 330)});
+//		var marker = new GMarker(eighthLight, {title: "8th Light Office"});
+//		var infoWindow = '<div class="directions_info" style="width: 230px;">Meetings are' + 
+//									   ' held at the 8th Light offices, located just off of Route 45 in Libertyville. If' +
+//									   ' you need pickup and drop off from the Libertyville Train station' +
+//									   ' <a href="mailto:eric@8thlight.com?subject=pickup">email me</a> and one of the' + 
+//									   ' 8th Lighters should be able to give you a ride.' + 
+//									   '<p style="font-weight:bold;">Coming From:</p>' + 
+//									   '<form action="http://maps.google.com/maps" method="get" target="_blank">' +
+//					           '<input type="text" SIZE=20 MAXLENGTH=48 name="saddr" id="saddr" value="" /><br>' +
+//					           '<INPUT value="Get Directions" TYPE="SUBMIT">' +
+//					           '<input type="hidden" name="daddr" value="' + eighthLight.lat() + ',' + eighthLight.lng() + '" />';
+    var center = new GLatLng(41.8888443339072, -87.61929273605347);
+    var thoughtWorks = new GLatLng(41.885257, -87.621523);
+    var map = new GMap2(document.getElementById("map_canvas"), {size: new GSize(309, 330)});
+    var marker = new GMarker(thoughtWorks, {title: "8th Light Office"});
+    var infoWindow = '<div class="directions_info" style="width: 230px;">This weeks meeting will be' + 
+      ' held at the Thoughtworks offices, located conveniently in downtown Chicago. If you can\'t find' +	
+      ' it, just look up!  Please make sure you register for the meeting with your name this week' +
+      ' so that security can be properly informed.'
+      '<p style="font-weight:bold;">Coming From:</p>' +
+      '<form action="http://maps.google.com/maps" method="get" target="_blank">' +
+      '<input type="text" SIZE=20 MAXLENGTH=48 name="saddr" id="saddr" value="" /><br>' +
+      '<INPUT value="Get Directions" TYPE="SUBMIT">' +
+      '<input type="hidden" name="daddr" value="' + thoughtWorks.lat() + ',' + thoughtWorks.lng() + '" />'; 
+
+    var customUI = map.getDefaultUI();
+    customUI.controls.menumaptypecontrol = false;
+    customUI.controls.smallzoomcontrol3d = false;
+    map.setUI(customUI);
+    map.setCenter(center, 15);
+    map.addOverlay(marker);
+    marker.openInfoWindowHtml(infoWindow, {suppressMapPan:true});
+  } 
+
+
 }
 
 $(document).ready(function() {

@@ -9,11 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091011150920) do
+ActiveRecord::Schema.define(:version => 20091027123128) do
 
   create_table "events", :force => true do |t|
     t.text     "description", :limit => 255
     t.datetime "event_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.float    "center_x"
+    t.float    "center_y"
+    t.float    "location_x"
+    t.float    "location_y"
+    t.string   "title"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
