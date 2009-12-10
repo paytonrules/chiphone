@@ -6,7 +6,6 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      puts "HEY THERE"
       flash[:notice] = "Successfully Logged In"
       redirect_to :controller => "admin/events"
     else
