@@ -25,4 +25,12 @@ describe Event do
     @event.event_date = DateTime.parse("01/01/2001 19:00")
     @event.formatted_date.should match(/Jan 01.+PM/)
   end
+
+  it "has a location" do
+    @event = Event.new
+
+    @event.location = Location.new
+
+    @event.location.should_not be_nil
+  end
 end
