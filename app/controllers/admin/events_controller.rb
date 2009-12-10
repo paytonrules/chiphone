@@ -4,7 +4,8 @@ class Admin::EventsController < Admin::ApplicationController
   active_scaffold :event do |config|    
     config.columns = [:event_date, 
                       :description,
-                      :registrations]
+                      :registrations,
+                      :location]
     
   end
 end
