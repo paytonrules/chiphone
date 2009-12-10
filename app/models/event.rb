@@ -5,4 +5,8 @@ class Event < ActiveRecord::Base
   def formatted_date
     self.event_date.strftime("%b %d %I:%M %p")
   end
+
+  def location_name
+    return location.title
+  end
 end

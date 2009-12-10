@@ -33,4 +33,11 @@ describe Event do
 
     @event.location.should_not be_nil
   end
+
+  it "reveals the name of the location" do
+    @event = Event.new
+    @event.build_location(:title => "8th Light")
+
+    @event.location_name.should == "8th Light"
+  end
 end
