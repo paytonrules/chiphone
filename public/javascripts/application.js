@@ -4,7 +4,7 @@ jQuery.ajaxSetup({
 	'beforeSend' : function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 })
 
-function initializeGoogleMap() {
+function initializeGoogleMap(center, meetingLocation, title, description) {
 	if (GBrowserIsCompatible()) {
 //		var center = new GLatLng(42.369, -87.957);
 //		var eighthLight = new GLatLng(42.30026991719819, -88.00201714038849);
@@ -20,19 +20,15 @@ function initializeGoogleMap() {
 //					           '<input type="text" SIZE=20 MAXLENGTH=48 name="saddr" id="saddr" value="" /><br>' +
 //					           '<INPUT value="Get Directions" TYPE="SUBMIT">' +
 //					           '<input type="hidden" name="daddr" value="' + eighthLight.lat() + ',' + eighthLight.lng() + '" />';
-    var center = new GLatLng(41.8888443339072, -87.61929273605347);
-    var thoughtWorks = new GLatLng(41.885257, -87.621523);
     var map = new GMap2(document.getElementById("map_canvas"), {size: new GSize(309, 330)});
-    var marker = new GMarker(thoughtWorks, {title: "8th Light Office"});
-    var infoWindow = '<div class="directions_info" style="width: 230px;">This weeks meeting will be' + 
-      ' held at the Thoughtworks offices, located conveniently in downtown Chicago. If you can\'t find' +	
-      ' it, just look up!  Please make sure you register for the meeting with your name this week' +
-      ' so that security can be properly informed.'
+    var marker = new GMarker(meetingLocation, {title: title}); 
+    var infoWindow = '<div class="directions_info" style="width: 230px;">' + 
+                     description + 
       '<p style="font-weight:bold;">Coming From:</p>' +
       '<form action="http://maps.google.com/maps" method="get" target="_blank">' +
       '<input type="text" SIZE=20 MAXLENGTH=48 name="saddr" id="saddr" value="" /><br>' +
       '<INPUT value="Get Directions" TYPE="SUBMIT">' +
-      '<input type="hidden" name="daddr" value="' + thoughtWorks.lat() + ',' + thoughtWorks.lng() + '" />'; 
+      '<input type="hidden" name="daddr" value="' + meetingLocation.lat() + ',' + meetingLocation.lng() + '" />'; 
 
     var customUI = map.getDefaultUI();
     customUI.controls.menumaptypecontrol = false;
@@ -47,8 +43,6 @@ function initializeGoogleMap() {
 }
 
 $(document).ready(function() {
-	initializeGoogleMap();
-		
 	$("#location").click(function(event) {
 		$("#registration_screen").slidingReplacement('#location_screen', 'left');
 	});
