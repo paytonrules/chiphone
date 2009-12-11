@@ -49,10 +49,11 @@ body {
 
 #location_inner {
   padding-top: 17px;
+  width: 273px;
+  text-align: right;
 }
 
 #location a {
-  padding-left: 230px;
   font-height: 16pt;
   font-family: Helvetica;
   color: #406397;
