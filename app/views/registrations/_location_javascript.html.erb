@@ -1,5 +1,5 @@
 <script type="text/javascript">
   var meetingLocation = new GLatLng(<%= location.location_x %>, <%= location.location_y %>);
   var center = new GLatLng(<%= location.center_x %>, <%= location.center_y %>);
-  initializeGoogleMap(center, meetingLocation, '<%= location.title %>', '<%= location.description %>');
+  initializeGoogleMap(center, meetingLocation, "<%= location.title %>", "<%= location.description %>");
 </script>
