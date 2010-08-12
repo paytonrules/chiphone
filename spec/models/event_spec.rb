@@ -26,12 +26,15 @@ describe Event do
     @event.formatted_date.should match(/Jan 01.+PM/)
   end
 
-  it "has a location" do
+  it "belongs to a location" do
+    association = Event.reflect_on_association(:location) 
+    association.macro.should == :belongs_to 
+    association.class_name.should == 'Location' 
+  end
+
+  it "should have a location id" do
     @event = Event.new
-
-    @event.location = Location.new
-
-    @event.location.should_not be_nil
+    @event.location_id.should be_nil
   end
 
   it "reveals the name of the location" do

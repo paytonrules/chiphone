@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   has_many :registrations
-  has_one :location
+  belongs_to :location
   
   def formatted_date
     self.event_date.strftime("%b %d %I:%M %p")
