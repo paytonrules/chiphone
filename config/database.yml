@@ -20,5 +20,4 @@ production:
   host: mysql.chiphonegroup.org
   database: chiphone_production
   username: paytonrules
-  password: Rush1sHere
 
